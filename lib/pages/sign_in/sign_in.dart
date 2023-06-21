@@ -25,13 +25,26 @@ class _SignInState extends State<SignIn> {
                 buildThirdPartyLogin(context),
                 Center(child: reusableText('Or use your email account login')),
                 Container(
-                  margin: EdgeInsets.only(top: 66.h),
+                  margin: EdgeInsets.only(top: 36.h),
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       reusableText('Email'),
-                      buildTextField("Email", "Email"),
+                      buildTextField(
+                        "Enter your email address",
+                        "email",
+                        "user",
+                      ),
+                      reusableText('Password'),
+                      buildTextField(
+                        "Enter your password",
+                        "password",
+                        "lock",
+                      ),
+                      forgotPassword(),
+                      buildLogInAndRegButton('Log in', 'login'),
+                      buildLogInAndRegButton('Register', 'register'),
                     ],
                   ),
                 ),
