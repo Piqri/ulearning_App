@@ -1,0 +1,8 @@
+bloc (step)
+1.  state (untuk memasukkan variabel input text example : texfield)
+2.  event
+3.  bloc
+
+immutable : mengacu pada objek yang nilainya tidak dapat diubah setelah dibuat.
+copywith  : Pada Flutter, copyWith adalah metode yang ada pada banyak objek yang bersifat immutable. Metode ini memungkinkan Anda membuat salinan baru dari objek tersebut dengan beberapa atau semua properti yang diubah sesuai dengan nilai yang Anda tentukan. Ini adalah teknik yang umum digunakan untuk membuat objek baru dengan sedikit perubahan daripada objek aslinya.
+                    Metode copyWith biasanya ditemukan pada kelas-kelas yang digunakan untuk menggambarkan status (state) dalam aplikasi Flutter, terutama pada kelas-kelas yang berfungsi sebagai model data atau bagian dari widget yang berfungsi sebagai state.
