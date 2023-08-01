@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:ulearning_app/app_events.dart';
 // import 'package:ulearning_app/app_states.dart';
 import 'package:ulearning_app/common/values/colors.dart';
+import 'package:ulearning_app/pages/application/application_page.dart';
 import 'package:ulearning_app/pages/bloc_providers.dart';
 import 'package:ulearning_app/pages/register/register.dart';
 import 'package:ulearning_app/pages/sign_in/sign_in.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          home: const Welcome(),
+          home: const ApplicationPage(),
           routes: {
             // "/myHomePage": (context) => const MyHomePage(),
             "/signIn": (context) => const SignIn(),
