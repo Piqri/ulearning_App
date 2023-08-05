@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ulearning_app/common/routes/names.dart';
+import 'package:ulearning_app/global.dart';
 import 'package:ulearning_app/pages/application/application_page.dart';
 import 'package:ulearning_app/pages/application/bloc/app_blocs.dart';
 import 'package:ulearning_app/pages/register/bloc/register_blocs.dart';
@@ -51,7 +52,19 @@ class AppPages {
     if (settings.name != null) {
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
-        print("valid route name ${settings.name}");
+        print("first log");
+        print(result.first.route);
+        // print("valid route name ${settings.name}");
+        bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+        if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
+          bool isLoggedIn = Global.storageService.getDeviceFirstOpen();
+          if (isLoggedIn) {
+            return MaterialPageRoute(
+                builder: (context) => ApplicationPage(), settings: settings);
+          }
+          return MaterialPageRoute(
+              builder: (context) => const SignIn(), settings: settings);
+        }
         return MaterialPageRoute(
             builder: (_) => result.first.page, settings: settings);
       }

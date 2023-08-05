@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ulearning_app/common/values/constant.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
+import 'package:ulearning_app/global.dart';
 import 'package:ulearning_app/pages/sign_in/bloc/sign_in_blocs.dart';
 
 class SignInController {
@@ -48,6 +50,8 @@ class SignInController {
           }
           var user = credential.user;
           if (user != null) {
+            Global.storageService
+                .setString(AppConstant.STORAGE_USER_TOKEN_KEY, "123456");
             // print('user exist');
             toastInfo(msg: "User exist");
             Navigator.of(context)

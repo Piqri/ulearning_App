@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
 
+import '../../common/values/constant.dart';
+import '../../global.dart';
 import 'bloc/welcome_blocs.dart';
 import 'bloc/welcome_states.dart';
 
@@ -134,12 +136,18 @@ class _WelcomeState extends State<Welcome> {
                   curve: Curves.decelerate,
                 );
               } else {
+                print("-1");
                 //jump to a new page
                 // Navigator.of(context).push(
                 //   MaterialPageRoute(
                 //     builder: (context) => MyHomePage(),
                 //   ),
                 // );
+                Global.storageService
+                    .setBool(AppConstant.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
+                // print(
+                // "the value is ${Global.storageService.getDeviceFirstOpen()}");
+                print("0");
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil("/sign_in", (route) => false);
               }
