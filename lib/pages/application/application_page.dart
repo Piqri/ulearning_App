@@ -20,7 +20,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
     return BlocBuilder<AppBloc, AppState>(
       builder: (context, state) {
         return Container(
-          color: Colors.amberAccent,
+          color: Colors.white,
           child: SafeArea(
             child: Scaffold(
               //membuat bottom navigation bar
